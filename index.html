@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md. Mahadi Hasan Shoruve | Nutrition & Public Health Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0d6e56;
+    --teal-light: #e1f5ee;
+    --teal-mid: #1d9e75;
+    --navy: #0f2744;
+    --navy-light: #1a3a5c;
+    --sand: #f7f4ef;
+    --sand-dark: #ede8df;
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --text-light: #8a8a8a;
+    --border: rgba(0,0,0,0.1);
+    --white: #ffffff;
+    --accent: #c8773a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px; font-weight: 500;
+    color: var(--navy); letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; font-size: 13px; font-weight: 400;
+    color: var(--text-muted); letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    background: var(--sand);
+    padding: 6rem 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -120px; right: -80px;
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(29,158,117,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -60px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(15,39,68,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 820px; margin: 0 auto; width: 100%;
+    position: relative; z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--teal); font-weight: 500; margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 1px; background: var(--teal);
+  }
+  h1.hero-name {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 500; line-height: 1.1;
+    color: var(--navy); margin-bottom: 0.35rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-title {
+    font-size: 15px; color: var(--text-muted);
+    margin-bottom: 2rem; font-weight: 300;
+  }
+  .hero-bio {
+    max-width: 620px;
+    font-size: 16px; line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 2rem;
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+  }
+  .hero-bio strong {
+    font-weight: 600; color: var(--navy);
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
+  .tag {
+    font-size: 12px; padding: 5px 14px; border-radius: 20px;
+    border: 1px solid; letter-spacing: 0.02em; font-weight: 400;
+  }
+  .tag-teal { border-color: var(--teal-mid); color: var(--teal); background: var(--teal-light); }
+  .tag-navy { border-color: rgba(15,39,68,0.3); color: var(--navy); background: rgba(15,39,68,0.05); }
+  .tag-amber { border-color: rgba(200,119,58,0.4); color: var(--accent); background: rgba(200,119,58,0.07); }
+
+  .hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 10px 22px; border-radius: 4px;
+    font-size: 13px; font-weight: 500; text-decoration: none;
+    letter-spacing: 0.02em; transition: all 0.2s; cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--navy); color: var(--white);
+    border: 1px solid var(--navy);
+  }
+  .btn-primary:hover { background: var(--navy-light); }
+  .btn-outline {
+    background: transparent; color: var(--navy);
+    border: 1px solid rgba(15,39,68,0.3);
+  }
+  .btn-outline:hover { border-color: var(--navy); background: rgba(15,39,68,0.04); }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 2rem; }
+  section:nth-child(even) { background: var(--sand); }
+  .section-inner { max-width: 820px; margin: 0 auto; }
+  .section-header { margin-bottom: 3rem; }
+  .section-label {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--teal); font-weight: 500; margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::before {
+    content: ''; display: block; width: 20px; height: 1px; background: var(--teal);
+  }
+  h2.section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 500; color: var(--navy);
+    letter-spacing: -0.01em; line-height: 1.2;
+  }
+
+  /* ── RESEARCH FOCUS ── */
+  .focus-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden; margin-top: 2rem;
+  }
+  .focus-card {
+    background: var(--white); padding: 1.75rem;
+  }
+  section:nth-child(even) .focus-card { background: var(--sand-dark); }
+  .focus-icon {
+    font-size: 20px; margin-bottom: 0.75rem; display: block;
+  }
+  .focus-card h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px; font-weight: 500; color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .focus-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.7; }
+
+  .phd-box {
+    margin-top: 2rem; padding: 1.75rem 2rem;
+    border-left: 3px solid var(--teal-mid);
+    background: var(--teal-light);
+    border-radius: 0 8px 8px 0;
+  }
+  .phd-box .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal); font-weight: 500; margin-bottom: 0.5rem; }
+  .phd-box p { font-size: 15px; color: var(--navy); line-height: 1.8; font-family: 'EB Garamond', serif; }
+
+  /* ── PUBLICATIONS ── */
+  .pub-list { display: flex; flex-direction: column; gap: 1px; }
+  .pub-item {
+    background: var(--white); padding: 1.5rem 1.75rem;
+    border: 1px solid var(--border); border-radius: 6px;
+    margin-bottom: 12px;
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .pub-item:hover { border-color: var(--teal-mid); box-shadow: 0 2px 12px rgba(29,158,117,0.08); }
+  .pub-year {
+    font-size: 12px; color: var(--text-light); font-weight: 400;
+    white-space: nowrap; min-width: 36px; padding-top: 3px;
+  }
+  .pub-content { flex: 1; }
+  .pub-badge {
+    display: inline-block; font-size: 11px; padding: 2px 9px;
+    border-radius: 12px; font-weight: 500; margin-bottom: 6px;
+    letter-spacing: 0.03em;
+  }
+  .badge-published { background: var(--teal-light); color: var(--teal); border: 1px solid rgba(29,158,117,0.3); }
+  .badge-review { background: rgba(200,119,58,0.1); color: var(--accent); border: 1px solid rgba(200,119,58,0.3); }
+  .badge-conference { background: rgba(15,39,68,0.07); color: var(--navy); border: 1px solid rgba(15,39,68,0.2); }
+  .badge-thesis { background: #f0e8ff; color: #5a3d9a; border: 1px solid rgba(90,61,154,0.25); }
+  .pub-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px; font-weight: 500; color: var(--navy);
+    margin-bottom: 4px; line-height: 1.4;
+  }
+  .pub-authors { font-size: 13px; color: var(--text-muted); margin-bottom: 3px; }
+  .pub-authors strong { color: var(--navy); font-weight: 500; }
+  .pub-journal { font-size: 13px; color: var(--text-light); font-style: italic; }
+  .pub-doi { font-size: 12px; color: var(--teal); text-decoration: none; }
+  .pub-doi:hover { text-decoration: underline; }
+  .pub-role {
+    font-size: 12px; color: var(--accent); margin-top: 4px; font-weight: 400;
+  }
+
+  /* ── METHODS ── */
+  .methods-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;
+  }
+  .method-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;
+    background: var(--white);
+  }
+  section:nth-child(even) .method-card { background: rgba(255,255,255,0.7); }
+  .method-category {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--teal); font-weight: 500; margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .method-items { list-style: none; }
+  .method-items li {
+    font-size: 13.5px; color: var(--text); padding: 3px 0;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .method-items li::before {
+    content: ''; display: block; width: 4px; height: 4px;
+    border-radius: 50%; background: var(--teal-mid); flex-shrink: 0;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-timeline { position: relative; padding-left: 1.5rem; }
+  .exp-timeline::before {
+    content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+    width: 1px; background: var(--border);
+  }
+  .exp-item { position: relative; margin-bottom: 2.5rem; }
+  .exp-item::before {
+    content: ''; position: absolute; left: -1.575rem; top: 8px;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--teal-mid);
+  }
+  .exp-period { font-size: 12px; color: var(--text-light); margin-bottom: 3px; font-weight: 400; }
+  .exp-role {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px; font-weight: 500; color: var(--navy); margin-bottom: 2px;
+  }
+  .exp-org { font-size: 13px; color: var(--teal); margin-bottom: 0.5rem; }
+  .exp-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.7; }
+
+  /* ── EDUCATION ── */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .edu-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem;
+    background: var(--white);
+  }
+  .edu-degree {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px; font-weight: 500; color: var(--navy); margin-bottom: 4px;
+  }
+  .edu-inst { font-size: 13px; color: var(--teal); margin-bottom: 3px; }
+  .edu-year { font-size: 12px; color: var(--text-light); }
+  .edu-note { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  .contact-blurb {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px; line-height: 1.75; color: var(--navy);
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; }
+  .contact-link {
+    display: flex; align-items: center; gap: 12px;
+    padding: 1rem 1.25rem; border-radius: 6px;
+    background: var(--white); border: 1px solid var(--border);
+    text-decoration: none; transition: border-color 0.2s;
+  }
+  .contact-link:hover { border-color: var(--teal-mid); }
+  .contact-link-icon { font-size: 16px; }
+  .contact-link-text { font-size: 13px; }
+  .contact-link-label { color: var(--text-light); font-size: 11px; display: block; }
+  .contact-link-value { color: var(--navy); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--text-light);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  h1.hero-name  { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-title   { animation: fadeUp 0.6s 0.15s ease both; }
+  .hero-bio     { animation: fadeUp 0.6s 0.2s ease both; }
+  .tags         { animation: fadeUp 0.6s 0.25s ease both; }
+  .hero-links   { animation: fadeUp 0.6s 0.3s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .focus-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    section { padding: 3rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Md. Mahadi Hasan</a>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#methods">Methods</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Nutrition &amp; Public Health Researcher</p>
+    <h1 class="hero-name">Md. Mahadi Hasan<br>Shoruve</h1>
+    <p class="hero-title">MSc · Institute of Nutrition and Food Science, University of Dhaka · Dhaka, Bangladesh</p>
+    <p class="hero-bio">
+      I investigate how <strong>dietary patterns and nutritional biomarkers</strong> shape cardiometabolic risk in South Asian populations — applying epidemiological methods, multivariate statistical modeling, and biochemical analysis to generate evidence that can inform policy and clinical nutrition practice.
+    </p>
+    <div class="tags">
+      <span class="tag tag-teal">Nutritional Epidemiology</span>
+      <span class="tag tag-teal">Dietary Pattern Analysis</span>
+      <span class="tag tag-teal">Cardiometabolic Health</span>
+      <span class="tag tag-navy">Biomarker Research</span>
+      <span class="tag tag-navy">Population-Based Studies</span>
+      <span class="tag tag-amber">South Asian Public Health</span>
+    </div>
+    <div class="hero-links">
+      <a href="mailto:mahadi.infsdu@gmail.com" class="btn btn-primary">Contact Me</a>
+      <a href="#publications" class="btn btn-outline">View Research</a>
+      <a href="#" class="btn btn-outline">Download CV ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH FOCUS -->
+<section id="research">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-label">Research Identity</p>
+      <h2 class="section-title">Research Focus &amp; PhD Interests</h2>
+    </div>
+    <p style="font-size:15px; color:var(--text-muted); max-width:640px; line-height:1.85; margin-bottom:0.5rem;">
+      My research sits at the intersection of <em>nutritional science, biochemistry, and population health</em> — examining how dietary exposures translate into measurable metabolic and immunological outcomes in resource-constrained settings.
+    </p>
+
+    <div class="focus-grid">
+      <div class="focus-card">
+        <span class="focus-icon">🫀</span>
+        <h3>Diet–Cardiometabolic Pathways</h3>
+        <p>Examining how dietary quality and patterns — derived via PCA — associate with hypertension, body fat percentage, and metabolic syndrome components in rural Bangladeshi adults.</p>
+      </div>
+      <div class="focus-card">
+        <span class="focus-icon">🧬</span>
+        <h3>Nutritional Biomarkers</h3>
+        <p>Profiling serum immunoglobulins, liver function enzymes, and body composition indices as nutritional and metabolic health markers in population-based cohorts.</p>
+      </div>
+      <div class="focus-card">
+        <span class="focus-icon">📊</span>
+        <h3>Epidemiological Methods</h3>
+        <p>Principal component analysis for dietary pattern derivation; multivariate logistic and linear regression; dietary assessment validation; body composition measurement comparisons.</p>
+      </div>
+      <div class="focus-card">
+        <span class="focus-icon">🌏</span>
+        <h3>LMICs &amp; South Asian Health</h3>
+        <p>Generating locally-grounded evidence on the nutrition transition in Bangladesh — where undernutrition and overnutrition coexist — to inform context-sensitive public health strategies.</p>
+      </div>
+    </div>
+
+    <div class="phd-box">
+      <p class="label">PhD Research Interests</p>
+      <p>I am seeking doctoral opportunities in <strong>nutritional epidemiology, public health nutrition, or diet–disease research</strong> with a focus on cardiometabolic outcomes in low- and middle-income country populations. I am particularly interested in labs working on dietary assessment methodology, metabolic syndrome in South Asian contexts, or the application of advanced statistical models (multilevel, mediation, time-series) to nutrition data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-label">Scholarly Work</p>
+      <h2 class="section-title">Publications &amp; Research</h2>
+    </div>
+
+    <div class="pub-list">
+
+      <!-- Published -->
+      <div class="pub-item">
+        <div class="pub-year">2024</div>
+        <div class="pub-content">
+          <span class="pub-badge badge-published">Published</span>
+          <p class="pub-title">Diet Quality as a Determinant of Liver Function Enzyme Abnormalities Among Women of Reproductive Age in Bangladesh</p>
+          <p class="pub-authors">Noor F, Shorovi N, <strong>Shoruve MMH</strong>, et al.</p>
+          <p class="pub-journal">Cureus</p>
+          <a class="pub-doi" href="https://doi.org/10.7759/cureus.102608" target="_blank">DOI: 10.7759/cureus.102608 ↗</a>
+          <p class="pub-role">Role: Co-author · Data analysis &amp; manuscript preparation</p>
+        </div>
+      </div>
+
+      <!-- Under Review 1 -->
+      <div class="pub-item">
+        <div class="pub-year">2025</div>
+        <div class="pub-content">
+          <span class="pub-badge badge-review">Under Review</span>
+          <p class="pub-title">Population-Based Assessment of Serum Immunoglobulins in Rural Bangladeshi Adults and Their Association with Sociodemographic Factors, Tobacco Use, and Components of Metabolic Syndrome</p>
+          <p class="pub-authors">Shorovi NJ, <strong>Shoruve MMH</strong>, Sarwar S, Ahmad TF, et al.</p>
+          <p class="pub-journal">Clinical and Experimental Immunology</p>
+          <p class="pub-role">Role: Co-investigator · Statistical analysis &amp; manuscript review</p>
+        </div>
+      </div>
+
+      <!-- Under Review 2 -->
+      <div class="pub-item">
+        <div class="pub-year">2025</div>
+        <div class="pub-content">
+          <span class="pub-badge badge-review">Under Review</span>
+          <p class="pub-title">Comparative Assessment of Body Fat Percentage Using a Digital Body Composition Monitor and Three-Site Skinfold Measurements</p>
+          <p class="pub-authors">Shorovi NJ, Sarwar S, Asamoni FNU, Ahmad TF, Noor F, <strong>Shoruve MMH</strong>, et al.</p>
+          <p class="pub-journal">Cureus</p>
+          <p class="pub-role">Role: Co-author · Data collection &amp; analysis</p>
+        </div>
+      </div>
+
+      <!-- Graduate Thesis -->
+      <div class="pub-item">
+        <div class="pub-year">2025</div>
+        <div class="pub-content">
+          <span class="pub-badge badge-thesis">MSc Thesis</span>
+          <p class="pub-title">Dietary Patterns, Percent Body Fat and the Risk of Pre-Hypertension among Rural Adults</p>
+          <p class="pub-authors"><strong>Shoruve MMH</strong></p>
+          <p class="pub-journal">Institute of Nutrition and Food Science, University of Dhaka</p>
+          <p class="pub-role">Methods: Principal Component Analysis (PCA) · Multivariate logistic regression · R, STATA</p>
+        </div>
+      </div>
+
+      <!-- Conference 1 -->
+      <div class="pub-item">
+        <div class="pub-year">2026</div>
+        <div class="pub-content">
+          <span class="pub-badge badge-conference">Conference Poster</span>
+          <p class="pub-title">Association between Dietary Patterns and Body Fat Percentage with Pre-Hypertension in Rural Areas of Bangladesh</p>
+          <p class="pub-authors"><strong>Shoruve MMH</strong></p>
+          <p class="pub-journal">FENS AURA 2026 · Department of Food Engineering &amp; Nutrition Science, State University of Bangladesh · April 2026</p>
+        </div>
+      </div>
+
+      <!-- Conference 2 -->
+      <div class="pub-item">
+        <div class="pub-year">2025</div>
+        <div class="pub-content">
+          <span class="pub-badge badge-conference">Conference Poster</span>
+          <p class="pub-title">Cardio-protective Effects of Pumpkin Seeds (Cucurbita maxima) and Chia Seeds (Salvia hispanica) on Doxorubicin-Induced Cardiotoxicity in a Rat Model</p>
+          <p class="pub-authors">Mia MR, <strong>Shoruve MMH</strong>, Asamoni FNU, et al.</p>
+          <p class="pub-journal">3rd International Poster Competition for Young Researchers 2025 · Dhaka, Bangladesh</p>
+          <a class="pub-doi" href="https://doi.org/10.13140/RG.2.2.22208.80644" target="_blank">DOI: 10.13140/RG.2.2.22208.80644 ↗</a>
+        </div>
+      </div>
+
+      <!-- UG Research -->
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div class="pub-content">
+          <span class="pub-badge badge-thesis">Undergraduate Research</span>
+          <p class="pub-title">Nutritional Status, Dietary Diversity, and Nutritional Knowledge Among Adolescents in Urban Dhaka and their Associated Factors: A Comprehensive Analysis</p>
+          <p class="pub-authors"><strong>Shoruve MMH</strong> (Lead Researcher)</p>
+          <p class="pub-journal">Institute of Nutrition and Food Science, University of Dhaka</p>
+          <p class="pub-role">Methods: Descriptive &amp; inferential statistics · R, STATA, SPSS</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- METHODS & SKILLS -->
+<section id="methods">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-label">Technical Expertise</p>
+      <h2 class="section-title">Methods &amp; Analytical Skills</h2>
+    </div>
+    <div class="methods-grid">
+      <div class="method-card">
+        <p class="method-category">Statistical Analysis</p>
+        <ul class="method-items">
+          <li>Principal Component Analysis (PCA)</li>
+          <li>Multivariate logistic regression</li>
+          <li>Linear &amp; multiple regression</li>
+          <li>Descriptive &amp; inferential statistics</li>
+          <li>Data cleaning &amp; management</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <p class="method-category">Software &amp; Tools</p>
+        <ul class="method-items">
+          <li>R (ggplot2, tidyverse)</li>
+          <li>STATA</li>
+          <li>SPSS</li>
+          <li>Microsoft Excel</li>
+          <li>GraphPad Prism</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <p class="method-category">Research Design</p>
+        <ul class="method-items">
+          <li>Cross-sectional study design</li>
+          <li>Population-based surveys</li>
+          <li>Dietary assessment (24-hr recall, FFQ)</li>
+          <li>Anthropometric measurement</li>
+          <li>Systematic literature review</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <p class="method-category">Laboratory &amp; Clinical</p>
+        <ul class="method-items">
+          <li>Biochemical sample analysis</li>
+          <li>Body composition assessment</li>
+          <li>Skinfold anthropometry</li>
+          <li>Biomarker profiling</li>
+          <li>Nutritional status assessment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-label">Professional Journey</p>
+      <h2 class="section-title">Research Experience</h2>
+    </div>
+
+    <div class="exp-timeline">
+      <div class="exp-item">
+        <p class="exp-period">2024 – 2025</p>
+        <p class="exp-role">Graduate Researcher (MSc Thesis)</p>
+        <p class="exp-org">Institute of Nutrition and Food Science, University of Dhaka</p>
+        <p class="exp-desc">Led independent thesis research investigating dietary pattern derivation via PCA and its association with pre-hypertension and body fat percentage in rural Bangladeshi adults. Managed the full research pipeline: study design, data collection, statistical modeling in R and STATA, and manuscript preparation.</p>
+      </div>
+      <div class="exp-item">
+        <p class="exp-period">2023 – 2025</p>
+        <p class="exp-role">Research Team Member</p>
+        <p class="exp-org">Collaborative Research Projects · University of Dhaka</p>
+        <p class="exp-desc">Contributed to multiple concurrent research projects including population-based immunoglobulin assessment, liver function enzyme studies, and body composition validation studies. Responsibilities included data analysis, statistical modeling, and co-authoring manuscripts submitted to international peer-reviewed journals.</p>
+      </div>
+      <div class="exp-item">
+        <p class="exp-period">2023</p>
+        <p class="exp-role">Undergraduate Research Lead</p>
+        <p class="exp-org">Institute of Nutrition and Food Science, University of Dhaka</p>
+        <p class="exp-desc">Designed and led a comprehensive cross-sectional study on nutritional status, dietary diversity, and nutritional knowledge among adolescents in urban Dhaka. Applied SPSS and STATA for descriptive and inferential analysis; synthesized findings into a structured research report.</p>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div style="margin-top: 3.5rem;">
+      <div class="section-header" style="margin-bottom: 1.5rem;">
+        <p class="section-label">Education</p>
+        <h2 class="section-title" style="font-size: 1.6rem;">Academic Training</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <p class="edu-degree">MSc in Nutrition &amp; Food Science</p>
+          <p class="edu-inst">Institute of Nutrition and Food Science, University of Dhaka</p>
+          <p class="edu-year">2023 – 2025</p>
+          <p class="edu-note">Thesis: Dietary Patterns, Body Fat &amp; Pre-Hypertension Risk in Rural Adults · PCA methodology</p>
+        </div>
+        <div class="edu-card">
+          <p class="edu-degree">BSc in Nutrition &amp; Food Science</p>
+          <p class="edu-inst">Institute of Nutrition and Food Science, University of Dhaka</p>
+          <p class="edu-year">2019 – 2023</p>
+          <p class="edu-note">Focus: Biochemical nutrition, dietary assessment, community nutrition, research methods</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Open to Collaboration &amp; PhD Opportunities</h2>
+    </div>
+    <div class="contact-grid">
+      <p class="contact-blurb">
+        I am actively seeking PhD positions in nutritional epidemiology, public health nutrition, or adjacent fields. I welcome inquiries from faculty working on diet–disease relationships, population-based nutrition research, or health in LMICs.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:mahadi.infsdu@gmail.com" class="contact-link">
+          <span class="contact-link-icon">✉</span>
+          <span class="contact-link-text">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">mahadi.infsdu@gmail.com</span>
+          </span>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-link-icon">📄</span>
+          <span class="contact-link-text">
+            <span class="contact-link-label">Curriculum Vitae</span>
+            <span class="contact-link-value">Download PDF →</span>
+          </span>
+        </a>
+        <a href="https://www.researchgate.net" target="_blank" class="contact-link">
+          <span class="contact-link-icon">🔬</span>
+          <span class="contact-link-text">
+            <span class="contact-link-label">ResearchGate</span>
+            <span class="contact-link-value">View Profile →</span>
+          </span>
+        </a>
+        <a href="https://orcid.org" target="_blank" class="contact-link">
+          <span class="contact-link-icon">🆔</span>
+          <span class="contact-link-text">
+            <span class="contact-link-label">ORCID</span>
+            <span class="contact-link-value">0000-0000-0000-0000 →</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Md. Mahadi Hasan Shoruve · Dhaka, Bangladesh · mahadi.infsdu@gmail.com</p>
+  <p style="margin-top: 6px; color: #bbb;">Nutrition &amp; Public Health Researcher · Seeking PhD 2025–2026</p>
+</footer>
+
+</body>
+</html>
